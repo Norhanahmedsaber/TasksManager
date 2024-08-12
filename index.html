@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/bc3535e109.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="theme">
+      <i class="fa-solid fa-sun sun" onclick="toggleTheme()"></i>
+      <i class="fa-solid fa-moon moon" onclick="toggleTheme()"></i>
+    </div>
+    <header>
+      <h1 class="page-header">PERSONAL<br />TASK MANAGER</h1>
+    </header>
+    <main class="main">
+      <aside class="aside">
+        <div class="aside-top">
+          <h5 class="separator" >Categories</h5>
+          <div id="categories-list">
+            <!-- Categories will be added here dynamically -->
+          </div>
+        </div>
+        <button class="categories-options" id="add">Add Category</button>
+        <div id="myModalCategory" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="description-section">
+              <h5 class="create-new">Add Category</h5>
+              <input class="add-desc" type="text" id="new-category-input" placeholder="Add Category" />
+            </div>
+            <h5 class="separator" id="Categories-modal">Categories</h5>
+            <div class="categories-section" id="category-selection">
+              <!-- Categories will be added here dynamically -->
+            </div>
+            <button id="add-new-category-btn">Add</button>
+          </div>
+        </div>
+      </aside>
+      <section>
+        <article class="task">
+          <h5 class="tasks-count" id="tasks-count">0 tasks</h5>
+          <button class="add-new-task" id="addtask">Add new Task</button>
+          <div id="myModalTask" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="description-section">
+                <h5 class="create-new">Add Task</h5>
+                <input class="add-desc" type="text" id="task-desc" placeholder="Add Task Description ...." />
+                <span id="errorMessage"></br>
+              </div>
+              <h5 class="separator">Categories</h5>
+              <div class="categories-section" id="category-selection-task">
+                <!-- Categories will be added here dynamically -->
+              </div>
+              <button id="add-new-task-btn">Submit Task</button>
+            </div>
+          </div>
+          <button class="clear-completed" id="clear-completed">Clear Completed</button>
+        </article>
+        <article class="components">
+          <div class="tasks" id="tasks-list">
+            <!-- Tasks will be added here dynamically -->
+          </div>
+        </article>
+        <footer id="filter-category">
+          <button class="footer-button" data-status="All">All</button>
+          <button class="footer-button" data-status="Active">Active</button>
+          <button class="footer-button" data-status="Completed">Completed</button>
+        </footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
